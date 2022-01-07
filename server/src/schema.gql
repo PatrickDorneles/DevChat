@@ -1,0 +1,14 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type user {
+  id: String!
+  username: String!
+  name: String!
+  github_id: Int!
+}
+
+type Query {
+  getUsers: [user!]!
+}
