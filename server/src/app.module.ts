@@ -6,6 +6,7 @@ import { join } from "path"
 
 import { ConfigModule } from "./@config/config.module"
 import { UserModule } from "./user/user.module"
+import { GithubModule } from './github/github.module';
 
 @Module({
 	imports: [
@@ -14,7 +15,8 @@ import { UserModule } from "./user/user.module"
 			autoSchemaFile: join(process.cwd(), "src/schema.gql")
 		}),
 		ConfigModule,
-		UserModule
+		UserModule,
+		GithubModule
 	]
 })
 export class AppModule {}

@@ -5,9 +5,9 @@ import { UserService } from "./user.service"
 
 @Resolver(() => User)
 export class UserResolver {
-	constructor(private readonly userService: UserService) {}
+	constructor(readonly userService: UserService) {}
 
-	@Query(() => [User])
+	@Query(() => [User], { name: "GetUsers" })
 	async getUsers() {
 		return this.userService.getUsers()
 	}
