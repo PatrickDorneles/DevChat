@@ -1,7 +1,11 @@
-import { Module } from '@nestjs/common';
-import { GithubService } from './github.service';
+import { Module } from "@nestjs/common"
+import { ConfigModule } from "@nestjs/config"
+
+import { GithubService } from "./github.service"
 
 @Module({
-  providers: [GithubService]
+  imports: [ConfigModule],
+  providers: [GithubService],
+  exports: [GithubService]
 })
 export class GithubModule {}

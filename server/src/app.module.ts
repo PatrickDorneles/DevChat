@@ -1,12 +1,15 @@
+
 import { Module } from "@nestjs/common"
+import { ConfigModule } from "@nestjs/config"
 import { GraphQLModule } from "@nestjs/graphql"
 import { TypeOrmModule } from "@nestjs/typeorm"
 
 import { join } from "path"
 
-import { ConfigModule } from "./@config/config.module"
+import { AuthModule } from "./auth/auth.module"
+import { GithubModule } from "./github/github.module"
 import { UserModule } from "./user/user.module"
-import { GithubModule } from './github/github.module';
+
 
 @Module({
 	imports: [
@@ -14,9 +17,10 @@ import { GithubModule } from './github/github.module';
 		GraphQLModule.forRoot({
 			autoSchemaFile: join(process.cwd(), "src/schema.gql")
 		}),
-		ConfigModule,
+		ConfigModule.forRoot(),
 		UserModule,
-		GithubModule
+		GithubModule,
+		AuthModule
 	]
 })
 export class AppModule {}

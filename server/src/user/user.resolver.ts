@@ -1,3 +1,4 @@
+import { Headers } from "@nestjs/common"
 import { Query, Resolver } from "@nestjs/graphql"
 
 import { User } from "./user.entity"

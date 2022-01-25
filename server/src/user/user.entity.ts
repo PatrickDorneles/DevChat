@@ -2,10 +2,10 @@ import { Field, Int, ObjectType } from "@nestjs/graphql"
 
 import { Column, Entity, PrimaryColumn } from "typeorm"
 
-const name = "user"
+const entity_name = "user"
 
-@ObjectType(name)
-@Entity({ name })
+@ObjectType()
+@Entity({ name: entity_name })
 export class User {
 	@Field((type) => String)
 	@PrimaryColumn()
@@ -23,6 +23,7 @@ export class User {
 	@Column()
 	github_id: number
 
+	@Field((type) => String)
 	@Column()
-	password: string
+	avatar_url: string
 }

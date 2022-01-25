@@ -2,13 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type user {
+type User {
   id: String!
   username: String!
   name: String!
   github_id: Int!
+  avatar_url: String!
 }
 
 type Query {
-  GetUsers: [user!]!
+  GetUsers: [User!]!
+  Profile: User!
+}
+
+type Mutation {
+  Authenticate(mobile: Boolean = false, code: String!): User!
 }

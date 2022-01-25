@@ -30,17 +30,17 @@ module.exports = {
 			"never"
 		],
 		"import-helpers/order-imports": [
-            "warn",
-            { // example configuration
-                newlinesBetween: "always",
-                groups: [
+			"warn",
+			{ // example configuration
+				newlinesBetween: "always",
+				groups: [
 					"/^@nestjs/", // any import paths starting with 'shared'
 					"module", // then normal modules (ex: `lodash/pull`)
 					["sibling", "parent"], // Then sibling and parent types. They can be mingled together
 					"index", // Then the index file
 				],
-                alphabetize: { order: "asc", ignoreCase: true },
-            },
-        ],
+				alphabetize: { order: "asc", ignoreCase: true },
+			},
+		],
 	}
 }
