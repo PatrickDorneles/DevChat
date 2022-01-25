@@ -1,4 +1,5 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common"
+import { ConfigService } from "@nestjs/config"
 import { JwtService } from "@nestjs/jwt"
 
 import { feedbacks } from "@/constants/feedback-messages.constants"
@@ -12,7 +13,8 @@ export class AuthService {
 	constructor(
 		readonly githubService: GithubService,
 		readonly userService: UserService,
-		readonly jwtService: JwtService
+		readonly jwtService: JwtService,
+		readonly configService: ConfigService
 	) {}
 
 	async authenticateUserByCode(code: string) {
@@ -43,7 +45,13 @@ export class AuthService {
 	}
 
 	async authenticateWithUser(user: User) {
-		const token = this.jwtService.sign({ github_id: user.github_id })
+		const token = this.jwtService.sign(
+			{ github_id: user.github_id },
+			{
+				secret: this.configService.get("jwt_secret"),
+				expiresIn: "7d"
+			}
+		)
 
 		return { user, token }
 	}

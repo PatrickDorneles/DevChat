@@ -10,11 +10,16 @@ type User {
   avatar_url: String!
 }
 
+type AuthResponse {
+  token: String!
+  user: User!
+}
+
 type Query {
-  GetUsers: [User!]!
-  Profile: User!
+  users: [User!]!
+  profile: User!
 }
 
 type Mutation {
-  Authenticate(mobile: Boolean = false, code: String!): User!
+  authenticate(mobile: Boolean = false, code: String!): AuthResponse!
 }
