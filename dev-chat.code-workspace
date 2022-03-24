@@ -1,0 +1,35 @@
+{
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [{
+			"label": "Clone Repos",
+			"type": "shell",
+			"command": "sh ./clone_repos"
+		}]
+	},
+	"folders": [
+		{
+			"name": "💬 Commands",
+			"path": "commands"
+		},
+		{
+			"name": "🌐 Web",
+			"path": "projects/web"
+		},
+		{
+			"name": "📱 Mobile",
+			"path": "projects/mobile"
+		},
+		{
+			"name": "🗃️ Server",
+			"path": "projects/server"
+		},
+		{
+			"name": "🔧 Env",
+			"path": "projects/env"
+		}
+	],
+	"extensions": {
+		"recommendations": ["dbaeumer.vscode-eslint","donjayamanne.githistory"]
+	}
+}

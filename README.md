@@ -7,6 +7,7 @@ This project will have three main applications, a server built with NodeJS, a we
 - _server_: the server web api with the socket server
 - _web_: the web application for chatting in browser
 - _mobile_: the mobile application for Android and IOS smartphones 
+- _env_: the dockers used to support the main applications
 
 ## Description
 **Tier**: 3-Advanced
